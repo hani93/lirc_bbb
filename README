@@ -4,8 +4,8 @@ lirc_bbb
 
 Porting RaspBerry Pi's "lirc_rpi" driver for BeagleBone Black.
 
-So far, only receiving part is working on "P9_12".
-(There is also output pin defined "P9_15", but i'll look more into this, that why it isn't working.)
+So far, sending is working on "P9_15" and receiving on "P9_12".
+
 
 
 Tested on kernel version 3.8.13 with RobertCNelson's patches.
