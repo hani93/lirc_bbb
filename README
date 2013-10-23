@@ -4,7 +4,9 @@ lirc_bbb
 
 Porting RaspBerry Pi's "lirc_rpi" driver for BeagleBone Black.
 
-So far, sending is working on "P9_15" and receiving on "P9_12".
+
+
+Sending is working on "P9_15" and receiving on "P9_12".
 
 
 
