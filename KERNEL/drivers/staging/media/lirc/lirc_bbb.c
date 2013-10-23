@@ -7,22 +7,8 @@
  *	      This was ported from the lirc_rpi driver,
  *	      so I would like say thanks to the authors.
  *
- *		  Ported by Xander Victory <xander@victory.id.au>
- *
- *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- */
+*/
+
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/errno.h>
@@ -45,25 +31,12 @@
 #include <linux/spinlock.h>
 #include <media/lirc.h>
 #include <media/lirc_dev.h>
-//#include <plat/gpio-cfg.h>
 #include <linux/gpio.h>
 #include <asm/mach-types.h>
 #include <asm/mach/arch.h>
 #include <asm/mach/map.h>
 #include <asm/mach/flash.h>
 #include <linux/platform_data/mtd-nand-omap2.h>
-//#include "common.h"
-//#include "omap_device.h"
-//#include "gpmc.h"
-//#include "soc.h"
-//#include "mux.h"
-//#include "hsmmc.h"
-//#include "pm.h"
-//#include "board-flash.h"
-//#include "common-board-devices.h"
-
-
-
 
 
 #define LIRC_DRIVER_NAME "lirc_bbb"
@@ -357,7 +330,6 @@ static int init_port(void)
 	gpio_set_value(gpio_out_pin, 0);
 
 ///MrMraxx///	s3c_gpio_setpull(gpio_in_pin, S3C_GPIO_PULL_UP);
-//omap_mux_init_gpio(gpio_in_pin, OMAP_PIN_INPUT_PULLUP);
 
 	//dprintk("set direction");
 
@@ -708,7 +680,7 @@ module_exit(lirc_bbb_exit_module);
 
 MODULE_DESCRIPTION("Infra-red receiver and blaster driver for BeagleBone Black GPIO (based on lirc_rpi).");
 MODULE_AUTHOR("MrMaxx <mrmaxx93@hotmail.com>");
-MODULE_LICENSE("GPL");
+MODULE_LICENSE("GPLv2");
 
 module_param(gpio_out_pin, int, S_IRUGO);
 MODULE_PARM_DESC(gpio_out_pin, "GPIO output/transmitter pin number"
