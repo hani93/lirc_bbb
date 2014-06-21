@@ -131,7 +131,7 @@ index 0000000..997c2ba
 +static struct platform_device *lirc_bbb_dev;
 +static struct timeval lasttv = { 0, 0 };
 +static struct lirc_buffer rbuf;
-+static spinlock_t lock;
++static DEFINE_SPINLOCK(lock);
 +
 +/* initialized/set in init_timing_params() */
 +static unsigned int freq = 38000;
